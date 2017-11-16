@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PreFinal.Models.TitlesModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Publisher
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titlePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titlePubDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titleNotes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pubName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.authorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titlePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titlePubDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titleNotes)
+        </td>
+    </tr>
+}
+
+</table>
